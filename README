@@ -20,7 +20,7 @@ https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMo
 
 So...if you are using your MotorBridge.py library w/ the Motor Bridge Cape, use uMove.py to
 run your favorite bunch of motors. I personally have two geared motors for the software 
-example listed here as "bbg."
+example listed here as "uMove.py."
 
 And...
 
