@@ -1,0 +1,55 @@
+Hello...
+
+This is a Motor Bridge Cape addition for the BeagleBone Green
+
+...
+
+w/ including software
+
+----------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------------
+
+The software for MotorBridge.py was typed up by a different person. That info. is listed in 
+
+...
+
+that specific file. I did have help from this page online to start the software example(s).
+
+https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMotorTest.py
+
+...
+
+So...if you are using your MotorBridge.py library w/ the Motor Bridge Cape, use uMove.py to
+run your favorite bunch of motors. I personally have two geared motors for the software 
+example listed here as "bbg."
+
+And...
+
+You will have to go to https://github.com/adafruit/adafruit-beaglebone-io-python and use the
+Adafruit_BBIO library to make things "officially" work.
+
+If you are up-to-date w/ your version of Adafruit_BBIO, you may need to downgrade to version
+1.0.3 by using this bunch of commands:
+
+sudo pip uninstall Adafruit_BBIO
+
+and ultimately this command:
+
+sudo pip install Adafruit_BBIO==1.0.3
+
+...
+
+Linux beaglebone 4.9.82-ti-r102 is listed when I perform the cmd: uname -a.
+
+BeagleBoard.org Debian Image 2018-03-05 is listed when I peform this cmd: cat /etc/dogtag
+
+If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge Cape, either
+look to me or use this site: https://forum.seeedstudio.com/viewforum.php?f=38&sid=0e0aecd64d2004f50736a8f20ba0a06c.
+
+There has been some updates recently, in the last two or three days, w/ the Motor Bridge Cape library b/c of 
+Adafruit_BBIO changes. You can look online for the respected changes.
+
+Seth
+
+P.S. If you need to be assisted w/ any ideas belonging to this page, let me know.
+
+
