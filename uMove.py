@@ -109,3 +109,4 @@ if __name__=="__main__":
         motor.DCMotorMove(1, 1, 90)
         motor.DCMotorMove(2, 1, 90)
         print "Major Malfunction!"
+        print "Minor Infraction!"
