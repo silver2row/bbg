@@ -20,7 +20,8 @@ https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMo
 
 So...if you are using your MotorBridge.py library w/ the Motor Bridge Cape, use uMove.py to
 run your favorite bunch of motors. I personally have two geared motors for the software 
-example listed here as "uMove.py."
+example listed here as "uMove.py" under MBC. MBC, as you guessed it, stands for Motor Bridge
+Cape.
 
 And...
 
@@ -46,10 +47,11 @@ If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge C
 look to me or use this site: https://forum.seeedstudio.com/viewforum.php?f=38&sid=0e0aecd64d2004f50736a8f20ba0a06c.
 
 There has been some updates recently, in the last two or three days, w/ the Motor Bridge Cape library b/c of 
-Adafruit_BBIO changes. You can look online for the respected changes.
+Adafruit_BBIO changes. You can look online for the respected changes at this specific address:
+https://github.com/adafruit/adafruit-beaglebone-io-python.
 
 Seth
 
-P.S. If you need to be assisted w/ any ideas belonging to this page, let me know.
+P.S. If you need to be assisted w/ any ideas belonging to this page, let me know. Outside of that, enjoy!
 
 
