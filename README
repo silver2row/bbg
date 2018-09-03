@@ -39,9 +39,9 @@ sudo pip install Adafruit_BBIO==1.0.3
 
 ...
 
-Linux beaglebone 4.14.49-ti-r54 is listed when I perform the cmd: uname -a.
+Linux beaglebone 4.9.82-ti-r102 is listed when I perform the cmd: uname -a.
 
-BeagleBoard.org Debian Image 2018-06-17 is listed when I peform this cmd: cat /etc/dogtag
+BeagleBoard.org Debian Image 2018-03-05 is listed when I peform this cmd: cat /etc/dogtag
 
 If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge Cape, either
 look to me or use this site: https://forum.seeedstudio.com/viewforum.php?f=38&sid=0e0aecd64d2004f50736a8f20ba0a06c.
