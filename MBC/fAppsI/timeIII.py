@@ -12,5 +12,5 @@ def hello():
     return render_template("mainTwo.html", **templateData)
 
 if __name__ == "__main__":
-    app.run(host="192.168.1.18", port=5000, debug=True)
+    app.run(host="192.168.7.2", port=5000, debug=True)
 
