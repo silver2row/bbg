@@ -1,17 +1,11 @@
 Hello...
 
-This is a Motor Bridge Cape addition for the BeagleBone Green
-
-...
-
+This is a Motor Bridge Cape addition for the BeagleBone Green or other BeagleBoard.org target boards
 w/ including software
 
 ----------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------------
 
-The software for MotorBridge.py was typed up by a different person. That info. is listed in 
-
-...
-
+The software for MotorBridge.py was typed up by a different person. That info. is listed in
 that specific file. I did have help from this page online to start the software example(s).
 
 https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMotorTest.py
@@ -39,12 +33,12 @@ sudo pip install Adafruit_BBIO==1.0.3
 
 ...
 
-Linux beaglebone 4.9.82-ti-r102 is listed when I perform the cmd: uname -a.
+Linux beaglebone 4.14.71-ti-r80 is listed when I perform the cmd: uname -r.
 
-BeagleBoard.org Debian Image 2018-03-05 is listed when I peform this cmd: cat /etc/dogtag
+BeagleBoard.org Debian Image 2018-10-07 is listed when I peform this cmd: cat /etc/dogtag
 
 If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge Cape, either
-look to me or use this site: https://forum.seeedstudio.com/viewforum.php?f=38&sid=0e0aecd64d2004f50736a8f20ba0a06c.
+look to me or find another route. Godspeed!
 
 There has been some updates recently w/ the Motor Bridge Cape library b/c of 
 Adafruit_BBIO changes. You can look online for the respected changes at this specific address:
@@ -55,6 +49,6 @@ https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/BBG_MotorB
 Seth
 
 P.S. If you need to be assisted w/ any ideas belonging to this page, let me know. Outside of that, enjoy! I may be
-adding new content soon. I will keep everyone (me) updated.
+adding new content soon. I will keep everyone updated.
 
 
