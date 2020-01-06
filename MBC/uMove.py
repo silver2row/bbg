@@ -18,91 +18,23 @@ if __name__=="__main__":
 
 #Making a U-Shape in the lawn
 #Left motor on chassis goes while the right motor ccw
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
     for i in range(1, 3):
         motor.DCMotorMove(1, 1, 90)
         motor.DCMotorMove(2, 2, 90)
 
 #All Flanks...Straight Ahead!
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
     for i in range(1, 51):
         motor.DCMotorMove(1, 1, 90)
         motor.DCMotorMove(2, 1, 90)
 
 #Make another U-Turn but this time, motors go in the opposite direction!
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
     for i in range(1, 3):
         motor.DCMotorMove(1, 2, 90)
         motor.DCMotorMove(2, 1, 90)
 
 #Straight Ahead
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
     for i in range(1, 51):
         motor.DCMotorMove(1, 1, 90)
         motor.DCMotorMove(2, 1, 90)
 
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 3):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 2, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 51):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 1, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 3):
-        motor.DCMotorMove(1, 2, 90)
-        motor.DCMotorMove(2, 1, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 51):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 1, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 3):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 2, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 51):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 1, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 3):
-        motor.DCMotorMove(1, 2, 90)
-        motor.DCMotorMove(2, 1, 90)
-
-    motor = MotorBridge.MotorBridgeCape()
-    motor.DCMotorInit(1, 1000)
-    motor.DCMotorInit(2, 1000)
-    for i in range(1, 51):
-        motor.DCMotorMove(1, 1, 90)
-        motor.DCMotorMove(2, 1, 90)
-        print("Major Malfunction!")
-        print("Minor Infraction!")
+    print("Testing, Testing\n, 1\n, 2\n, 3\n")
