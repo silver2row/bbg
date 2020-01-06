@@ -18,7 +18,10 @@ Oh and you now need to install this:
 
     pip3 install smbus2
 
-@ Change your ideas accordingly. You can see the changes in the source of the MotorBridge.py file.
+Change your ideas accordingly. You can see the changes in the source of the MotorBridge.py file.
+And...
+Change line 302 to:
+    filepath = "/dev/i2c-2".format(bus)
 
 ...
 
