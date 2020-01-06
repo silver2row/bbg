@@ -1,9 +1,8 @@
-Hello...
+    Hello...
 
-This is a Motor Bridge Cape addition for the BeagleBone Green or other BeagleBoard.org target boards
-w/ including software
+# This is a Motor Bridge Cape addition for the BeagleBone Green Wireless w/ included software
 
-----------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------------
+    ----------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------------
 
 The software for MotorBridge.py was typed up by a different person. That info. is listed in
 that specific file. I did have help from this page online to start the software example(s).
@@ -17,34 +16,22 @@ run your favorite bunch of motors. I personally have two geared motors for the s
 example listed here as "uMove.py" under MBC. MBC, as you guessed it, stands for Motor Bridge
 Cape.
 
-And...
+Oh and you now need to install this:
 
-You will have to go to https://github.com/adafruit/adafruit-beaglebone-io-python and use the
-Adafruit_BBIO library to make things "officially" work.
+    pip3 install smbus2
 
-If you are up-to-date w/ your version of Adafruit_BBIO, you may need to downgrade to version
-1.0.3 by using this bunch of commands:
-
-sudo pip uninstall Adafruit_BBIO
-
-and ultimately this command:
-
-sudo pip install Adafruit_BBIO==1.0.3
+@ Change your ideas accordingly. You can see the changes in the source of the MotorBridge.py file.
 
 ...
 
-Linux beaglebone 4.14.71-ti-r80 is listed when I perform the cmd: uname -r.
+Linux beaglebone 4.14.108-ti-r116 is listed when I perform the cmd: uname -r.
 
-BeagleBoard.org Debian Image 2018-10-07 is listed when I peform this cmd: cat /etc/dogtag
+BeagleBoard.org Debian Image 2019-09-08 is listed when I peform this cmd: cat /etc/dogtag
 
 If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge Cape, either
 look to me or find another route. Godspeed!
 
-There has been some updates recently w/ the Motor Bridge Cape library b/c of 
-Adafruit_BBIO changes. You can look online for the respected changes at this specific address:
-https://github.com/adafruit/adafruit-beaglebone-io-python and here:
-
-https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/BBG_MotorBridgeCape/MotorBridge.py
+    https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/BBG_MotorBridgeCape/MotorBridge.py
 
 Seth
 
