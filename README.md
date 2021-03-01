@@ -25,10 +25,6 @@ Change line 302 to:
 
 ...
 
-Linux beaglebone 4.14.108-ti-r116 is listed when I perform the cmd: uname -r.
-
-BeagleBoard.org Debian Image 2019-09-08 is listed when I peform this cmd: cat /etc/dogtag
-
 If you need assistance w/ set up or breakdown of the BBG for your Motor Bridge Cape, either
 look to me or find another route. Godspeed!
 
@@ -39,4 +35,8 @@ Seth
 P.S. If you need to be assisted w/ any ideas belonging to this page, let me know. Outside of that, enjoy! I may be
 adding new content soon. I will keep everyone updated.
 
+    Linux beaglebone 4.19.94-ti-rt-r59
 
+and...
+    
+    BeagleBoard.org Debian Buster IoT Image 2020-04-06
