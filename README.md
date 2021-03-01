@@ -1,9 +1,7 @@
 # Motor Bridge Cape addition for the BeagleBone Green Wireless w/ included software
 
-----------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-----------------
-
-The software for MotorBridge.py was typed up by a different person. That info. is listed in
-that specific file. I did have help from this page online to start the software example(s).
+    The software for MotorBridge.py was typed up by a different person. That info. is listed in
+    that specific file. I did have help from this page online to start the software example(s).
 
 https://github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMotorTest.py
 
