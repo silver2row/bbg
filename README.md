@@ -35,7 +35,7 @@ Seth
 If you need to be assisted w/ any ideas belonging to this page, let me know. Outside of that, enjoy! I may be
 adding new content soon. I will keep everyone updated.
 
-    Linux beaglebone 4.19.94-ti-rt-r59
+    Linux beaglebone 4.19.94-ti-rt-r59 # You do not need a real-time kernel to use this library!
 
 and...
     
