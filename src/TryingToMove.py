@@ -3,6 +3,8 @@
 import MotorBridge
 from time import sleep
 
+# stepper motor stuff...enjoy!
+
 motor = MotorBridge.MotorBridgeCape()
 motor.StepperMotorAInit()
 

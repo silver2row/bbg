@@ -3,7 +3,7 @@
  # * Copyright (c) 2015 seeed technology inc.
  # * Author      : Jiankai Li
  # * Create Time:  Nov 2015
- # * Change Log : Jan. 2020 by Seth w/ help from #beagle on Freenode
+ # * Change Log : Jan. 2020 by Seth w/ help from #beagle on IRC
  # *
  # * The MIT License (MIT)
  # *
@@ -36,7 +36,7 @@ import pathlib
 reset_pin = pathlib.Path('/sys/class/gpio/gpio49/direction')
 reset_pin.write_text('low')
 
-bus = SMBus('/dev/i2c-2')
+bus = SMBus('/dev/i2c-2') # change the smbus2.py file accordingly at line 302, i.e. -{} to -2
 
 ReadMode  = 0
 WriteMode = 1
