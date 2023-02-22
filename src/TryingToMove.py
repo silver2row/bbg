@@ -3,8 +3,6 @@
 import MotorBridge
 from time import sleep
 
-# stepper motor stuff...enjoy!
-
 motor = MotorBridge.MotorBridgeCape()
 motor.StepperMotorAInit()
 
@@ -14,14 +12,14 @@ class morph:
         if arch == 0:
             sleep(2)
         elif arch <= 24:
-            motor.StepperMotorAMove(2500, 1000)
+            motor.StepperMotorAMove(1500, 1000)
             sleep(3)
-            motor.StepperMotorAMove(-2500, 1000)
+            motor.StepperMotorAMove(-1500, 1000)
             sleep(3)
         elif arch >= 26:
-            motor.StepperMotorAMove(7500, 1000)
+            motor.StepperMotorAMove(500, 1000)
             sleep(10)
-            motor.StepperMotorAMove(-7500, 1000)
+            motor.StepperMotorAMove(-500, 1000)
             sleep(10)
         elif arch == 76:
             motor.StepperMotorAMove(1000, 1000)

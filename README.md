@@ -1,20 +1,21 @@
-# Motor Bridge Cape addition for the BeagleBone Green Wireless...
+# Motor Bridge Cape addition for the BeagleBone Green Wireless...or other am335x board!
 
     The software for MotorBridge.py was typed up by a different person. That info. is listed in
     that specific file. I did have help from this page online to start the software example(s).
 
 git clone github.com/Seeed-Studio/MotorBridgeCapeforBBG_BBB/blob/master/tests/DCMotorTest.py
 
+or try the stepper example also...
+
 ...
 
 So...if you are using your MotorBridge.py library w/ the Motor Bridge Cape, use uMove.py or
-DCMotorTest.py to run your favorite bunch of motors. I personally have two geared motors for the software 
-example listed here as "uMove.py" under MBC. MBC, as you guessed it, stands for Motor Bridge
-Cape.
+DCMotorTest.py to run your favorite bunch of motors. I personally use a 12v Lead Acid Battery to power
+the Motor Bridge Cape for funtionality. Also, please follow the below examples to use them at your will.
 
 Oh and you now need to install this:
 
-    pip3 install smbus2
+    python3 -m pip install smbus2
 
 Change your ideas accordingly. You can see the changes in the source of the MotorBridge.py file.
 And...
@@ -35,11 +36,11 @@ Seth
 If you need to be assisted w/ any ideas belonging to this page, let me know. Outside of that, enjoy! I may be
 adding new content soon. I will keep everyone updated.
 
-` uname -r ` : 5.10.59-ti-r22
+` uname -r ` : 5.10.162-ti-r56
 
 and...
 
-` cat /etc/dogtag ` : BeagleBoard.org Debian Bullseye IoT Image 2021-10-02
+` cat /etc/dogtag ` : BeagleBoard.org Debian Bullseye Xfce Image 2022-05-01
 
 Oh and...
 
@@ -52,3 +53,6 @@ Oh and...
     6. alter MotorBridge.py to use smbus2.py, i.e. look in the MotorBridge.py file for ideas...
     7. Type up awesome source!
 
+Also...
+
+Look to vsx-examples for using gpiod in Python3! Enjoy...

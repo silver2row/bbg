@@ -3,7 +3,7 @@
  # * Copyright (c) 2015 seeed technology inc.
  # * Author      : Jiankai Li
  # * Create Time:  Nov 2015
- # * Change Log : Jan. 2020 by Seth w/ help from #beagle on IRC
+ # * Change Log : Jan. 2023 by Seth w/ help from #beagle on IRC and vsx-examples for gpiod in python3...
  # *
  # * The MIT License (MIT)
  # *
@@ -29,14 +29,21 @@
 # by Jiankai.li
 
 from smbus2 import SMBus
-import time
-import pathlib
+from time import sleep
+#import pathlib
+import gpiod
 
-# reset pin is P9.23, i.e. gpio1.17
-reset_pin = pathlib.Path('/sys/class/gpio/gpio49/direction')
-reset_pin.write_text('low')
+CHIP = 'gpiochip1'
+LINE_OFFSET = [17]
 
-bus = SMBus('/dev/i2c-2') # change the smbus2.py file accordingly at line 302, i.e. -{} to -2
+chip = gpiod.Chip(CHIP)
+
+lines = chip.get_lines(LINE_OFFSET)
+lines.request(consumer=' ', type=gpiod.LINE_REQ_DIR_OUT)
+
+lines.set_values([0])
+
+bus = SMBus('/dev/i2c-2')
 
 ReadMode  = 0
 WriteMode = 1
@@ -226,15 +233,15 @@ def SetDefault():
 
 class MotorBridgeCape:
     def __init__(self):
-        GPIO.output(Reset, GPIO.HIGH)
-        time.sleep(1)
+        lines.set_values([1])
+        sleep(1)
 
     # init stepper motor A
     def StepperMotorAInit(self):
         WriteByte(TB_1A_MODE, TB_SPM) #Stepper
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteHalfWord(TB_1A_DUTY, 1000)    # voltage
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # MoveSteps > 0 CW
     # MoveSteps < 0 CCW
@@ -245,18 +252,18 @@ class MotorBridgeCape:
         else:
             WriteByte(TB_1A_DIR, TB_CCW)   #CW
             MoveSteps = -MoveSteps
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteOneWord(TB_1A_SPM_SPEED, StepDelayTime)  # unit us
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteOneWord(TB_1A_SPM_STEP, MoveSteps)
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # init stepper motor B
     def StepperMotorBInit(self):
         WriteByte(TB_2A_MODE, TB_SPM) #Stepper
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteHalfWord(TB_2A_DUTY, 1000)    # voltage
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # MoveSteps > 0 CW
     # MoveSteps < 0 CCW
@@ -267,37 +274,37 @@ class MotorBridgeCape:
         else:
             WriteByte(TB_2A_DIR, TB_CCW)   #CW
             MoveSteps = -MoveSteps
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteOneWord(TB_2A_SPM_SPEED, StepDelayTime)  # unit us
-        time.sleep(DelayTime)
+        sleep(DelayTime)
         WriteOneWord(TB_2A_SPM_STEP, MoveSteps)
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # Init DC Motor
     def DCMotorInit(self,MotorName, Frequency):
     # Init the DC Frequency
         WriteOneWord(CONFIG_TB_PWM_FREQ, Frequency)
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # Set the port as DC Motor
         if MotorName == 1 or MotorName == 2:
             WriteByte(TB_1A_MODE, TB_DCM)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_1A_DIR, TB_STOP)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_1B_MODE, TB_DCM)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_1B_DIR, TB_STOP)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
         if MotorName == 3 or MotorName == 4:
             WriteByte(TB_2A_MODE, TB_DCM)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_2A_DIR, TB_STOP)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_2B_MODE, TB_DCM)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(TB_2B_DIR, TB_STOP)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
     # Drive the DC Motor
     # Direction 1 CW | 2 CCW
@@ -305,27 +312,27 @@ class MotorBridgeCape:
     def DCMotorMove(self, MotorName, Direction, PWMDuty):
         if MotorName == 1:
             WriteByte(TB_1B_DIR, Direction)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteOneWord(TB_1B_DUTY, PWMDuty*10)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if MotorName == 2:
             WriteByte(TB_1A_DIR, Direction)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteOneWord(TB_1A_DUTY, PWMDuty*10)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if MotorName == 3:
             WriteByte(TB_2B_DIR, Direction)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteOneWord(TB_2B_DUTY, PWMDuty*10)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if MotorName == 4:
             WriteByte(TB_2A_DIR, Direction)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteOneWord(TB_2A_DUTY, PWMDuty*10)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
     # Stop the DC motor
     def DCMotorStop(self, MotorName):
@@ -337,68 +344,68 @@ class MotorBridgeCape:
             WriteByte(TB_2B_DIR, TB_STOP)
         if MotorName == 4:
             WriteByte(TB_2A_DIR, TB_STOP)
-        time.sleep(DelayTime)
+        sleep(DelayTime)
 
     # init the Servo
     def ServoInit(self, ServoName, Frequency):
         if ServoName == 1:
             WriteHalfWord(SVM1_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM1_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 2:
             WriteHalfWord(SVM2_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM2_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
         if ServoName == 3:
             WriteHalfWord(SVM3_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM3_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 4:
             WriteHalfWord(SVM4_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM4_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
         if ServoName == 5:
             WriteHalfWord(SVM5_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM5_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 6:
             WriteHalfWord(SVM6_FREQ, Frequency)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
             WriteByte(SVM6_STATE, SVM_ENABLE)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
     def ServoMoveAngle(self, ServoName, Angle):
         if ServoName == 1:
             WriteHalfWord(SVM1_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 2:
             WriteHalfWord(SVM2_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 3:
             WriteHalfWord(SVM3_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 4:
             WriteHalfWord(SVM4_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 5:
             WriteHalfWord(SVM5_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
         if ServoName == 6:
             WriteHalfWord(SVM6_ANGLE, Angle)
-            time.sleep(DelayTime)
+            sleep(DelayTime)
 
 #def myloop():
 
